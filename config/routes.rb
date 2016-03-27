@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
   resources :users
+  
+  get 'login' => 'session#new', as: :login
+  post 'login' => 'session#create'
+  post 'logout' => 'session#destroy', as: :logout
+  
+  resources :players
+  
+  get 'profile' => 'profiles#view', as: :profile
+  get 'profile/edit' => 'profiles#edit', as: :edit_profile
+  post 'profile/edit' => 'profiles#update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
