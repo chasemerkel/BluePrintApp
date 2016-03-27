@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
   before_action :redirect_non_user
   before_action :redirect_non_admin, only: [:index, :new, :create, :destroy]
