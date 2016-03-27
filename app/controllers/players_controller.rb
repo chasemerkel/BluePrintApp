@@ -75,7 +75,7 @@ class PlayersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_player
       player = User.find(params[:id])
-      @player = user if user.is_player?
+      @player = player if user.is_player?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
