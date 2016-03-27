@@ -4,7 +4,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    
+    user = User.find_by_name(params[:session][:name])
+    if user && user.authenticate(params[:session][:password])
+      session[:user_id] = user.id
+      redirect_to root_url
+    else
+      redirect_to login_url
+    end
   end
 
   def destroy
