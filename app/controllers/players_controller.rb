@@ -46,7 +46,7 @@ class PlayersController < ApplicationController
 
   def destroy
     if @player
-      @user.destroy
+      @player.destroy
       respond_to do |format|
         format.html { redirect_to players_url, notice: 'Player was successfully destroyed.' }
         format.json { head :no_content }
