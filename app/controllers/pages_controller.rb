@@ -1,9 +1,12 @@
 class PagesController < ApplicationController
   
   def home
-    non_user_home unless current_user
-    player_home if current_user.is_player?
-    admin_home if current_user.is_admin?
+    if current_user
+      player_home if current_user.is_player?
+      admin_home if current_user.is_admin?
+    else
+      non_user_home
+    end
   end
   
 private
