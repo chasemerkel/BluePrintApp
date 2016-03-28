@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :users
   
-  get 'login' => 'session#new', as: :login
-  post 'login' => 'session#create'
-  post 'logout' => 'session#destroy', as: :logout
+  get 'login' => 'sessions#new', as: :login
+  post 'login' => 'sessions#create'
+  post 'logout' => 'sessions#destroy', as: :logout
   
   resources :players
   
