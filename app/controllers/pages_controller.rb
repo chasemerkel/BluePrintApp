@@ -12,11 +12,11 @@ class PagesController < ApplicationController
 private
 
   def admin_home
-    format.html{render :admin_home}
+    format.html {render :admin_home}
   end
   
   def player_home
-    format.html{render :player_home}
+    format.html {render :player_home}
   end
   
   def non_user_home
