@@ -16,7 +16,7 @@ private
   end
   
   def player_home
-    format.html {render :player_home}
+    render template: 'pages/player_home'
   end
   
   def non_user_home
