@@ -12,7 +12,7 @@ class PagesController < ApplicationController
 private
 
   def admin_home
-    format.html {render :admin_home}
+    render template: 'pages/admin_home'
   end
   
   def player_home
