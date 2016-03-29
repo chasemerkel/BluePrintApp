@@ -4,10 +4,10 @@ class ProfilesController < ApplicationController
   def show
   end
 
-  def edit
+  def change_password
   end
 
-  def update
+  def update_password
     respond_to do |format|
       if current_user.update(profile_params)
         format.html { redirect_to @user, notice: 'Your profile was successfully updated.' }
@@ -21,7 +21,7 @@ class ProfilesController < ApplicationController
 
   private
     # Never trust parameters from the scary internet, only allow the white list through.
-    def profile_params
-      params.fetch(:profile, {})
+    def update_password_params
+      params.require(:profile).permit(:new_password, :confirm_password, :old_password)
     end
 end
