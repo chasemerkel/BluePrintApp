@@ -3,11 +3,14 @@ Rails.application.routes.draw do
   
   #resources :users
   
-  get 'login' => 'sessions#new', as: :login
-  post 'login' => 'sessions#create'
-  delete 'logout' => 'sessions#destroy', as: :logout
+  get 'login', to: 'sessions#new', as: :login
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy', as: :logout
   
-  resources :players
+  get 'players', to: 'players#index', as: :player_index
+  get 'player/new', to: 'players#new', as: :new_player
+  post 'player/new', to: 'player#create'
+  delete 'player/:id/delete', to: 'player#delete', as: :delete_player
   
   get 'profile' => 'profiles#view', as: :profile
   get 'profile/edit' => 'profiles#edit', as: :edit_profile
