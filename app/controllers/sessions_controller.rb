@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to root_url
     else
       @errors = ['User Name or Password was incorrect']
-      format.html { render :new }
+      render new
     end
   end
 
