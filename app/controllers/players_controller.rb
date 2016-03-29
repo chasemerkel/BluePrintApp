@@ -18,7 +18,7 @@ class PlayersController < ApplicationController
   end
 
   def create
-    @player = User.new(user_params)
+    @player = User.new(player_params)
     @player.role = :player
 
     respond_to do |format|
@@ -68,6 +68,6 @@ class PlayersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
-      params.fetch(:player, {})
+      params.require(:player).permit(:name, :email, :password, :confirm_password)
     end
 end
