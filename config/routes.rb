@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   post 'player/new', to: 'player#create'
   delete 'player/:id/delete', to: 'player#delete', as: :delete_player
   
-  get 'profile' => 'profiles#view', as: :profile
-  get 'profile/edit' => 'profiles#edit', as: :edit_profile
-  post 'profile/edit' => 'profiles#update'
+  get 'profile' => 'profiles#show', as: :profile
+  get 'profile/edit' => 'profiles#edit_password', as: :change_password
+  post 'profile/edit' => 'profiles#update_password'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
