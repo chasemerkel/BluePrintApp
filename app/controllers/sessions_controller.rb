@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to root_url
     else
       @errors = ['User Name or Password was incorrect']
-      render template: 'sessions/login'
+      render template: 'sessions/login.html.erb'
     end
   end
 
