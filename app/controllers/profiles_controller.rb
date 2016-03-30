@@ -18,6 +18,8 @@ class ProfilesController < ApplicationController
           format.json { render json: @user.errors, status: :unprocessable_entity }
         end
       end
+    else
+      render :change_password
     end
   end
 
