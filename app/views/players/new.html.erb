@@ -1,4 +1,4 @@
-<%= form_for(@player) do |form| %>
+<%= form_for(:player, url: new_player_path) do |form| %>
   <%= form.label 'Username' %>
   <%= form.text_field :name %>
   <%= form.label 'Email' %>
