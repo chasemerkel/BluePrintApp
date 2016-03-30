@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   
   get 'players', to: 'players#index', as: :player_index
   get 'player/new', to: 'players#new', as: :new_player
-  post 'player/new', to: 'player#create'
-  delete 'player/:id/delete', to: 'player#delete', as: :delete_player
+  post 'player/new', to: 'players#create'
+  delete 'player/:id/delete', to: 'players#delete', as: :delete_player
   
   get 'profile' => 'profiles#show', as: :profile
   get 'profile/change_password' => 'profiles#change_password', as: :change_password
