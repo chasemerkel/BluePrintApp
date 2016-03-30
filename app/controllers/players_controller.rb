@@ -4,7 +4,7 @@ class PlayersController < ApplicationController
   before_action :redirect_non_admin, only: [:index, :new, :create, :destroy]
   
   def index
-    @players = User.where(role: :player)
+    @players = User.where(role: :player).to_a
   end
   
   def show
