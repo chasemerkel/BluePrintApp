@@ -22,7 +22,7 @@ class PlayersController < ApplicationController
     @player.role = :player
 
     respond_to do |format|
-      if @player.save
+      if !User.find_by_name(@player.name) && @player.save
         format.html { redirect_to player_index_path, notice: 'Player was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
